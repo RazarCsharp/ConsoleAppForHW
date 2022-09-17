@@ -16,7 +16,9 @@ namespace ConsoleAppForHW_03
             
             Console.ReadKey();
         }
+                                      // Методы
 
+        //Сбор данных
         static (string name, string lastname,int age, int petnum, string[] petname, int favocolorsnum, string[] favocolors)  UserDataEntery()
         {
             (string name, string lastname,int age,int petnum, string[] petname, int favocolorsnum, string[] favocolors) userdata;
@@ -58,6 +60,8 @@ namespace ConsoleAppForHW_03
 
 
         }
+
+        //Получение имен с проверкой условий
         static void GetName(out string name,in string nametype)
         {
             Console.WriteLine("Enter : {0}\tDon't use the numbers.\tThe length of the name should not exceed 20 symbols (the \"space\" is symbol)", nametype);
@@ -76,6 +80,8 @@ namespace ConsoleAppForHW_03
             
             
         }
+
+        //Получение возраста с проверкой условий
         static void GetAge(out int age,in string type)
         {
 
@@ -93,7 +99,9 @@ namespace ConsoleAppForHW_03
                 
 
 
-         }   
+         }
+
+        //Получение числа питомцев с проверкой условий (значение является размером массива)
         static void GetPetNum(ref int petnum )
         {
             Console.WriteLine("How many pet you have?\tEnter a number no more  10");
@@ -105,6 +113,8 @@ namespace ConsoleAppForHW_03
                 GetPetNum(ref petnum);
             }
         }
+
+        //Получение имени питомца с передачей в массив, проверка реализована в методе NameCheck
         static void GetPetName(ref string[] petname,int petnum)
         {
             petname = new string[petnum];
@@ -117,6 +127,8 @@ namespace ConsoleAppForHW_03
 
             }
         }
+
+        //Получение свдений о наличии питомца
         static void HaveaPet(ref string haveapet)
         {
             Console.WriteLine("Do you have a pet?\nyes\\no");
@@ -127,7 +139,9 @@ namespace ConsoleAppForHW_03
                 HaveaPet(ref haveapet);
             }
            
-        }  
+        }
+
+        //Получение числа любимых цветов с проверкой условий (значение является размером массива)
         static void GetColorsNum(ref int colorsnum)
         {
             Console.WriteLine("How many favorite colors do you have?\nEnter a number no more  10");
@@ -139,6 +153,8 @@ namespace ConsoleAppForHW_03
                 GetColorsNum(ref colorsnum);
             }
         }
+
+        //Получение названия любимых цвето с передачей в массив, проверка реализована в методе NameCheck
         static void GetFevocolors(ref string[] favocolors, int favocolorsnum)
         {
             favocolors = new string[favocolorsnum];
@@ -150,6 +166,8 @@ namespace ConsoleAppForHW_03
             }
 
         }
+
+        //Вывод данных в консоль
         static void ShowUserData(in string name, string lastname, int age, int petnum, string[] petname, int favocolorsnum, string[] favocolors)
         {            
             Console.WriteLine("\nUserName : {0}\t\tUserLastname : {1}\t\tUserAge : {2}\nNumber of user's pets : {3}\tNumber of user's favorite colors : {4}", name, lastname, age, petnum, favocolorsnum);
@@ -165,6 +183,7 @@ namespace ConsoleAppForHW_03
                 Console.WriteLine("\n" + item);
             }
         }
+        //Проверка имени на наличие числовых значений
         static string NameCheck()
         { 
         string name = Console.ReadLine();
